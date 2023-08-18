@@ -9,9 +9,6 @@ body {
   }
   
   .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 200px;
     height: 350px;
     border: 0.3vw solid seashell;
@@ -22,6 +19,11 @@ body {
     margin: 4px;
     transform: rotate(8deg);
     text-shadow: 2px 2px 1px rgb(36, 35, 35);
+
+    /* Centered Mango Image using flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .container {
