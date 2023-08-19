@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 20% auto;
+  }
+  
+  aside {
+    border-right: 1px solid rgb(205, 205, 205);
+  }
+
+  main {
+    margin: 10px;
+    overflow: hidden;
+    color: white;
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #0184ae;
+    
+}
+  
+  .um-logo {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    width: 100%;
+  }
+
+ .um-user-name{
+  font-size: large;
+ }
+  
+  .um-user-email {
+    font-size: small;
+    color: grey;
+  }
+  
+  .um-user img {
+    width: 40px;
+  }
+  
+  .test-designer {
+    width: 50%;
+    height: 200px;
+  }
+
+  .um-user{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 0.3em;
+    padding: 0.3em 1em;
+    margin-top: 1em;
+  }
+
+  .um-user-name{
+    color: rgb(32, 186, 217);
+    font-weight: bold;
+
+  }
+
+nav{
+    color: rgb(32, 186, 217);
+    /* width: 30px; */
+
+}
+
+li {
+    list-style: none;
+    
+}
+
+nav ul li{
+    display: flex;
+    gap:1.5em;
+    /* margin: 15px; */
+    padding: 10px;
+    padding-left: 1.7em;
+    cursor: pointer;
+    
+}
+
+nav ul{
+    margin-top: 10px;
+}
+
+main > .test{
+    background-color: #016392;
+}
+
+.test-data > span:nth-child(1){
+    color: white;
+    background-color: black;
+    padding: 8px;  
+    /* z-index: 1; */
+}
+
+.test-data > span:nth-child(2){
+    color: white;
+}
+
+.test-data .bi-x{
+    float: right;
+    padding: 0.2em;
+    margin: 0.2em;
+    color: white;
+}
+
+.test-properties span{
+    display: block;
+    background-color: #0184ae;
+    z-index: 100;
+    /* margin-top: 8px; */
+}
+
+.form-properties{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: rgb(0, 119, 223);
+}
+
+.description{
+  display: flex;
+  vertical-align: top;
+}
+
+textarea{
+  width: 500px;
+  height: 120px;
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 3px;
+  margin: 0.3em;
+  
+}
+
+
+.form-properties .details label{
+  margin-inline: 0.4em;
+  line-height: 28px;
+}
+
+select{
+  border: 1px solid rgb(239, 239, 239);
+  width: 85px;
+  
+}
+
+main .test  .test-main{
+  display: flex;
+  gap: 0.5em;
+  color: black;
+  background-color: white;
+}
+
+.test .test-main .test-flowchart{
+  width: 70%;
+  height: 35em;
+  background-color: white;
+  border-right: 1px solid #02a9cb;
+}
+
+.test .test-main .test-data{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 360px;
+  border-left: 1px solid #02a9cb;
+  box-shadow: white;
+}
+
+.test .test-main .test-data > div{
+  flex: 1 1 50%;
+
+}
+
+.test .test-main .test-data  > div span{
+  width: 100%;
+}
+
+.test .test-main .test-data  > div i{
+  float: right;
+}
+
+/* .test .test-main .test-data  > div .table-header{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2em;
+
+  margin-top: 1em;
+} */.test-designer{
+  background-color: #f5f5f5;
+  height: 100%;
+  width: 100%
+}
+
+
+.test-parameters > .table-header{
+
+  margin-top: 1.4em;
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1em;
+  border-bottom: 1px solid rgb(217, 217, 217);
+
+}
+
+.test-variables > .table-header{
+  display: flex;
+  /* justify-content: start !important; */
+  margin-top: 1.4em;
+  padding: 0 1em;
+}
+
+.test .test-main .test-flowchart span{
+  display: block;
+  background-color: #02a9cb;
+  padding: 3px;
+  color: white;
+}
+
+
+
+span{
+  display: inline-block;
+}
+
+i{
+  cursor: pointer;
+}
+
+.test .test-main .test-flowchart .options{
+  display: flex;
+  gap: 0.7em;
+  padding: 0.2em;
+  color: grey;
+}
+
+.test .test-main .test-flowchart .options .bi-play-fill{
+  border-left: 1px solid grey;
+  padding-left: 0.4em;
+}
+
+.test .test-main .test-flowchart .options .bi-box-seam-fill{
+  border-left: 1px solid grey;
+  padding-left: 0.4em;
+}
+.test .test-main .test-flowchart .options .bi-scissors{
+  border-left: 1px solid grey;
+  padding-left: 0.4em;
+}
+.test .test-main .test-flowchart .options .bi-clipboard{
+  border-left: 1px solid grey;
+  padding-left: 0.4em;
+}
+
+.test .test-main .test-flowchart .options .bi-trash{
+  border-left: 1px solid grey;
+  padding-left: 0.4em;
+}
+
+.test-designer{
+  background-image: url(./Screenshot\ 2023-08-19\ 231213.png);
+  background-repeat: no-repeat;
+
+}
+
+.test-variables > span:nth-child(1){
+  display: inline-block;
+  background-color: #0184ae;
+  padding: 2.1px;
+  color: white;
+}
+
+.test-data .test-variables{
+  /* border: 1px solid black; */
+  background-color: white;
+}
+
+/* .test-data .test-variables .table-header{
+  background-color: white;
+} */
+
+.test-data .test-variables i{
+  display: inline-block;
+  
+}
+
+.test-data .test-variables .table-header{
+  color: #0184ae;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(217, 217, 217);
+}
+
+
+.test-parameters > span:nth-child(1){
+  display: inline-block;
+  background-color: #0184ae;
+  color: white;
+  
+}
+
+.test-variables, .test-parameters{
+  position: relative;
+}
+
+.bi-plus{
+  position: absolute;
+  top: 1.4em;
+  right: 0.2em;
+  /* font-size: 10px; */
+  color: #0184ae;
+} 
+
+.test-parameters .table-header span{
+  color: #0184ae;
+  font-weight: bold;
+}
