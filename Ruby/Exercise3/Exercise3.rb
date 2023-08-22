@@ -1,19 +1,20 @@
 class HashManipulator
-    def initialize(initial_hash)
-      @hash = initial_hash
+
+    attr_accessor :hash
+    def initialize
+      @hash = {}
     end
-  
-    def add_entry(key, value)
+
+    def add_key_value_pair(key, value)
       @hash[key] = value
     end
-  
-    def filter_and_transform
-      new_hash = {}
-      @hash.each do |key, value|
-        new_hash[key] = value if key.is_a?(Integer) && key.odd?
-      end
-      new_hash
+ 
+    def select_odd_integer_keys
+      @hash.select { |key, _| key.is_a?(Integer) && key.odd? }
     end
+
   end
+
+ 
   
   
