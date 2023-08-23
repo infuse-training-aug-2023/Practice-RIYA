@@ -2,9 +2,9 @@ class SerialAverageCalculator
 
   def initialize(serial_number, xx, yy)
    @serial_number = serial_number
-   @xx = xx.to_f
-   @yy = yy.to_f
-  
+   @xx = xx
+   @yy = yy
+     
   end
   
   def calculate_average
