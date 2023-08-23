@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Movies</title>
+</head>
+
+
+<body>
+    <h1>Movies</h1>
+    <div class="search-container">
+        <input onkeyup="getData()" type="text" id="searchInput" placeholder="Search movies...">
+        <button id="searchButton">Search</button>
+        <label for="yearSelect">Sort by Year:</label>
+        <select id="yearSelect">
+            <option value="none">Sort By</option>
+            <option value="asc">Year</option>
+        </select>
+    </div>
+
+    <div class="movie-grid" id="movieGrid"></div>
+    <script src="./script.js">
+
+    </script>
+</body>
+
+</html>

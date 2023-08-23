@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-div{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    display: none;
+}
+
+input:checked + .main-div{
+    background-color:black;
+    color: white;
+}
+
+input:checked + .main-div #clock{
+    color: white;
+    border: 2px solid white;
+}
+
+.main-div label{
+    margin-top: 20px;
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.main-div p{
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+#clock{
+    /* background-color: rgb(255, 255, 255); */
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
