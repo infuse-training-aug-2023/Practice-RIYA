@@ -11,7 +11,7 @@ function updateTime() {
     if(hours<12 && hours>=0){
         greet.innerHTML = "Good Morning :)"
     }
-    else if(hours>12 && hours < 16){
+    else if(hours>=12 && hours < 16){
         greet.innerHTML = "Good Afternoon :)"
     }
     else{
