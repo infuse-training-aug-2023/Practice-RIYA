@@ -7,21 +7,21 @@ class TestHashManipulator < Test::Unit::TestCase
   end
 
   def test_add_key_value_pair
-    @hash_manipulator.add_key_value_pair(:name, 'Riya')
-    assert_equal({ :name => 'Riya' }, @hash_manipulator.hash)
+    @hash_manipulator.add_key_value_pair(:name, 'John')
+    assert_equal({ :name => 'John' }, @hash_manipulator.hash)
   end
 
-  def test_select_odd_integer_keys
-    @hash_manipulator.add_key_value_pair(1, 'One')
+  def test_update_hash
+    @hash_manipulator.add_key_value_pair(98765, 25)
     @hash_manipulator.add_key_value_pair(:name, 'Riya')
-    @hash_manipulator.add_key_value_pair(2, 'Two')
+    @hash_manipulator.add_key_value_pair(22434, 64)
     @hash_manipulator.add_key_value_pair(3, 'Three')
-    @hash_manipulator.add_key_value_pair(4, 'Four')
+    @hash_manipulator.add_key_value_pair(44567, 34 )
 
-    result = @hash_manipulator.select_odd_integer_keys
-    expected_result = { 1 => 'One', 3 => 'Three' }
+    @hash_manipulator.update_hash
 
-    assert_equal(expected_result, result)
+    expected_result = { 98765 => 25, :name => 'Riya', 543121 => 100, 3 => 'Three', 44567 => 34}
+    assert_equal(expected_result, @hash_manipulator.hash)
   end
-
 end
+
