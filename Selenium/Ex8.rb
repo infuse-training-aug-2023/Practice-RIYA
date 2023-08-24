@@ -16,7 +16,6 @@ slider_pointer.send_keys(:right)
 slider_pointer.send_keys(:right)
 
 slider_value = driver.find_element(:id, "amount")
-
 puts slider_value.attribute("value")
 
 driver.quit
