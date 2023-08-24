@@ -3,28 +3,16 @@ require 'selenium-webdriver'
 Selenium::WebDriver::Chrome::Service.driver_path = 'C:\Users\adity\Desktop\Drivers\chromedriver-win64\chromedriver-win64\chromedriver.exe'
 driver = Selenium::WebDriver.for :chrome
 
-
 driver.get 'https://computer-database.gatling.io/computers'
-
-
 column_header_text = "Computer name"
 
-
-header_row = driver.find_element(css: 'thead tr')
-
-
-column_index = header_row.find_elements(tag_name: 'th').find_index do |header_cell|
-  header_cell.text == column_header_text
-end
-
-table_body = driver.find_element(css: 'tbody')
-rows = table_body.find_elements(tag_name: 'tr')
+table_rows = driver.find_elements(css: 'tbody tr')  
 
 column_values = []
 
-rows.each do |row|
+table_rows.each do |row|
   cells = row.find_elements(tag_name: 'td')
-  cell_text = cells[column_index].text
+  cell_text = cells[0].text  
   column_values << cell_text
 end
 
