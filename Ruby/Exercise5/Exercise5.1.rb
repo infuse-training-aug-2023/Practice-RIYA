@@ -1,23 +1,47 @@
 require 'json'
+class DataManipulator
+  attr_reader :file_path
 
-class UserData
-  def initialize(name, age, salary)
-    @name = name
-    @age = age
-    @salary = salary
+  def initialize(file_path)
+    @file_path = file_path
   end
 
-  def to_hash
-    {
-      name: @name,
-      age: @age,
-      salary: @salary
-    }
+  def save_data(data)
+    File.write(@file_path, JSON.generate(data))
+    "Data saved to #{@file_path}"
+  end
+
+  def load_data
+    if File.exist?(@file_path)
+      json_data = File.read(@file_path)
+      begin
+        JSON.parse(json_data, symbolize_names: true)
+      rescue JSON::ParserError
+        nil 
+      end
+    else
+      nil 
+    end
+  end
+
+  def update_data
+    loaded_data = load_data
+    return "File doesn't exist or contains invalid JSON data." unless loaded_data
+    if loaded_data.key?(:name)
+      first_name, last_name = loaded_data[:name].split(' ')
+      loaded_data[:first_name] = first_name
+      loaded_data[:last_name] = last_name
+      loaded_data.delete(:name)
+      updated_json_data = JSON.pretty_generate(loaded_data)
+      timestamp = Time.now.utc.strftime("%Y-%m-%d_%H-%M-%S")
+      new_filename = "RiyaKumbhar#{timestamp}.json"
+
+      File.write(new_filename, updated_json_data)
+      "Data updated and saved to #{new_filename}"
+    else
+      "Data does not contain a :name key."
+    end
   end
 end
 
-user = UserData.new("Nicole Smith", 25, 25552.67)
-
-File.open("data.json", "w") do |file|
-  file.write(JSON.generate(user.to_hash))
-end
+ 
