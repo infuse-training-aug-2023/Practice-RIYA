@@ -3,29 +3,21 @@ require 'selenium-webdriver'
 Selenium::WebDriver::Chrome::Service.driver_path = 'C:\Users\adity\Desktop\Drivers\chromedriver-win64\chromedriver-win64\chromedriver.exe'
 driver = Selenium::WebDriver.for :chrome
 
+driver.get "https://www.globalsqa.com/demo-site/sliders/#Steps"
 
-driver.get 'https://www.globalsqa.com/demo-site/sliders/#Steps'
+driver.switch_to.frame driver.find_element(:xpath, "/html/body/div/div[1]/div[2]/div/div/div[2]/div/div/div[3]/p/iframe")
 
+slider = driver.find_element(:id, "slider") 
 
-slider_handle = driver.find_element(:xpath, ``)
+slider_pointer = slider.find_element(:tag_name, "span")
 
+slider_pointer.send_keys(:right)
+slider_pointer.send_keys(:right)
+slider_pointer.send_keys(:right)
 
-slider_width = slider_handle.size.width
-desired_value = 60
+slider_value = driver.find_element(:id, "amount")
 
-offset_x = (slider_width * desired_value / 100) - (slider_width / 2)
-driver.action.drag_and_drop_by(slider_handle, offset_x, 0).perform
-
-
-sleep 1
-
-
-style_attribute = slider_handle.attribute('style')
-left_position = style_attribute.match(/left: (\d+%);/)[1]
-
-slider_max_value = 100
-slider_value = (left_position.to_f / slider_width) * slider_max_value
-
-puts "Slider Value: #{slider_value}"
+puts slider_value.attribute("value")
 
 driver.quit
+
