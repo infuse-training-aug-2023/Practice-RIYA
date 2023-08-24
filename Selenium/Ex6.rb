@@ -5,11 +5,11 @@ driver = Selenium::WebDriver.for :chrome
 
 driver.get 'https://letcode.in/forms'
 
-dropdown = driver.find_element(:xpath , '/html/body/app-root/app-forms/section[1]/div/div/div[1]/div/div/form/div[5]/div[2]/div/div/div/select')
-options = dropdown.find_elements(tag_name: 'option')
+dropdown_element = driver.find_element(:xpath, '/html/body/app-root/app-forms/section[1]/div/div/div[1]/div/div/form/div[5]/div[2]/div/div/div/select')
 
- 
-options.each do |option|
+dropdown = Selenium::WebDriver::Support::Select.new(dropdown_element)
+
+dropdown.options.each do |option|
   puts option.text
 end
 
