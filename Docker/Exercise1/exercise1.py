@@ -2,7 +2,6 @@ import numpy as np
 import os
 import sys
 
-# Set environment variables
 os.environ['VAR1'] = 'value1'
 os.environ['VAR2'] = 'value2'
 
